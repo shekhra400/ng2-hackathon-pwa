@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     this._homeService.getItem('home_content')
       .then((data) => {
         if (data) {
-          this.homeContent = data;
+          this.homeContent = data.homeContent;
         } else {
           this._homeService.getApiData()
             .subscribe(response => {
