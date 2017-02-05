@@ -20,6 +20,7 @@ export class ProductListComponent implements OnInit {
       .then((data) => {
         if (data) {
           this.productlistContent = data.productlistContent;
+          console.log(this.productlistContent);
         } else {
           this._productlistService.getApiData()
             .subscribe(response => {

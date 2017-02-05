@@ -38,7 +38,7 @@ export class ProductlistService {
   }
 
   getApiData() {
-    return this._http.get('http://demo1087851.mockable.io/products')
+    return this._http.get('../testjson/productlist.json')
       .map(res => res.json());
   }
 
