@@ -38,7 +38,7 @@ export class HomeService {
   }
 
   getApiData() {
-    return this._http.get('./testjson/home_content.json')
+    return this._http.get('../testjson/home.json')
       .map(res => res.json());
   }
 

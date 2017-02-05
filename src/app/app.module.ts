@@ -10,7 +10,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HeaderComponent } from './header/header.component';
 import {MyNewServiceService} from './my-new-service.service';
-import { HomeService } from './home.service';
+import { HomeService } from './home/home.service';
 import { FooterComponent } from './footer/footer.component';
 
 
@@ -42,7 +42,7 @@ import { FooterComponent } from './footer/footer.component';
       }
     ])
   ],
-  providers: [MyNewServiceService,HomeService],
+  providers: [MyNewServiceService, HomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
