@@ -34,11 +34,11 @@ import { FooterComponent } from './footer/footer.component';
         component: HomeComponent,
       },
       {
-        path: 'list',
+        path: 'list/:id',
         component: ProductListComponent,
       },
       {
-        path: 'details',
+        path: 'details/:id',
         component: ProductDetailComponent,
       }
     ])

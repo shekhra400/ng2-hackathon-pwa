@@ -9,10 +9,9 @@
 <div class="row home">
 	<div id="products" class="list-group home__cat">
         <div class="item  col-xs-4 col-lg-4" *ngFor="let data of homeContent.categories">
-            <div class="thumbnail">
-                <img class="group list-group-image" [src]="data.img" alt="" />
-               
-            </div>
+            <a class="thumbnail" [routerLink]="['.', 'list', data.id]">
+                <img class="group list-group-image" [src]="data.img" alt="" />        
+            </a>
         </div>
     </div>
 
