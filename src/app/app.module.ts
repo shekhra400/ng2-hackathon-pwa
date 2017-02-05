@@ -11,6 +11,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { HeaderComponent } from './header/header.component';
 import {MyNewServiceService} from './my-new-service.service';
 import { HomeService } from './home.service';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HomeService } from './home.service';
     HomeComponent,
     ProductListComponent,
     ProductDetailComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import { HomeService } from './home.service';
     HttpModule,
     RouterModule.forRoot([
       {
-        path:'home',
+        path:'',
         component: HomeComponent,
       },
       {
