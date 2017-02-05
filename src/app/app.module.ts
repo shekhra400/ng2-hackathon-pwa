@@ -11,6 +11,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { HeaderComponent } from './header/header.component';
 import {MyNewServiceService} from './my-new-service.service';
 import { HomeService } from './home.service';
+import { ProductlistService } from './product-list/product-list.service';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { HomeService } from './home.service';
       }
     ])
   ],
-  providers: [MyNewServiceService,HomeService],
+  providers: [MyNewServiceService, HomeService, ProductlistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
