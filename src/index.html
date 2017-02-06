@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <title>Ng2CalenderHackathon</title>
   <base href="/">
-  <!--<link rel="manifest" href="manifest.json">-->
+  <link rel="manifest" href="manifest.json">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <script>
-  // if("serviceWorker" in navigator){
-  //   navigator.serviceWorker.register('sw.js')
-  //   .then(()=> console.log('service worker installed'))
-  //   .catch(err => console.log('error',err));
-  // }
+  if("serviceWorker" in navigator){
+    navigator.serviceWorker.register('sw.js')
+    .then(()=> console.log('service worker installed'))
+    .catch(err => console.log('error',err));
+  }
   </script>
 </head>
 <body>

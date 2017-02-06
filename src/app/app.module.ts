@@ -38,7 +38,7 @@ import { FooterComponent } from './footer/footer.component';
         component: ProductListComponent,
       },
       {
-        path: 'details/:id',
+        path: 'details',
         component: ProductDetailComponent,
       }
     ])
