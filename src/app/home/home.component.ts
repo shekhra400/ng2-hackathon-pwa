@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from './home.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getHomeContent();
+    // this.getHomeContent();
+    // this._homeService.checkFactory();
+    // this.getHomeContentPromise();
+    this.getHomeContentObservable();
   }
 
   getHomeContent() {
@@ -35,6 +39,29 @@ export class HomeComponent implements OnInit {
             });
         }
       });
+  }
+
+  // getHomeContentPromise(){
+  //   this._homeService.getApiDataWithPromise()
+  //   .then((data: Promise<Object>) => {
+  //     console.log('in promise then');
+  //     console.log(data);
+  //   }).catch((error: Promise<any>) => {
+  //     console.log('in promise catch');
+  //     console.log(error);
+  //   })
+  // }
+
+  getHomeContentObservable() {
+    this._homeService.getApiDataWithObservable()
+    .subscribe((data: Observable<Object>) => {
+      console.log('in Observable then');
+      console.log(data);
+      this.homeContent = data;
+    }, (error: Observable<Object>) => {
+      console.log('in Observable catch');
+      console.log(error);
+    });
   }
 
 }

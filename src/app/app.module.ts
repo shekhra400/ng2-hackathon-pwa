@@ -14,6 +14,8 @@ import { ProductlistService } from './product-list/product-list.service';
 import { HomeService } from './home/home.service';
 import { FooterComponent } from './footer/footer.component';
 
+import {FactoryService} from './shared/factory.service';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { FooterComponent } from './footer/footer.component';
       }
     ])
   ],
-  providers: [MyNewServiceService, HomeService, ProductlistService],
+  providers: [MyNewServiceService, HomeService, ProductlistService, FactoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

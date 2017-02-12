@@ -1,5 +1,6 @@
 {
-	"banner": "./assets/banner1.jpg",
+	"banner"	: "./assets/banner1.jpg",
+	"header"	: "assets/banner1.jpg",
 	"categories": [
 		{
 			"id": 1,

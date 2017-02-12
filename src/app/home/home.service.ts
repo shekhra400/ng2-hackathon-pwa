@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { Subscriber } from 'rxjs/Subscriber';
+import * as Rx from 'rxjs/Rx';
 import 'rxjs/Rx';
 const PouchDB = require('pouchdb');
+import { FactoryService } from '../shared/factory.service';
 
 @Injectable()
 export class HomeService {
@@ -10,7 +13,7 @@ export class HomeService {
   db: any;
   // data: any;
 
-  constructor(private _http: Http) {
+  constructor(private _http: Http, private _factoryService: FactoryService) {
     this.db = new PouchDB('my_app');
   }
 
@@ -38,8 +41,35 @@ export class HomeService {
   }
 
   getApiData() {
-    return this._http.get('../testjson/home.json')
-      .map(res => res.json());
+    return this._factoryService.get('../testjson/home.json')
+      ;
   }
 
+  // getApiDataWithPromise() {
+  //   return new Promise((resolve, reject) => {
+  //     this._factoryService.get('../testjson/home.json')
+  //       .subscribe(res => {
+  //         resolve(res);
+  //       },
+  //       err => {
+  //         reject(err);
+  //       }
+  //       )
+  //   });
+  // }
+
+  getApiDataWithObservable() {
+    return Rx.Observable.create((subscriber: Subscriber<Object>) => {
+      this._factoryService.get('../testjson/home.json')
+        .subscribe(res => {
+          console.log(subscriber);
+          subscriber.next(res);
+          subscriber.complete();
+        }, err => {
+          console.log('in hoomeservice error');
+          subscriber.next(err);
+        }
+        );
+    });
+  }
 }
